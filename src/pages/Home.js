@@ -2,14 +2,14 @@
 import React from "react";
 import AppIcon from "../components/AppIcon";
 import "../index.css";
+import appsData from "../data/data";
 
 const Home = () => {
   return (
     <div className="home">
-      <AppIcon icon="/images/apps/about.png" label="About Me" link="/about" />
-      {/*<AppIcon icon="/icons/portfolio.png" label="Portfolio" link="/portfolio"/>*/}
-      {/*<AppIcon icon="/icons/contact.png" label="Contact" link="/contact" />*/}
-      {/*<AppIcon icon="/icons/cv.png" label="CV" link="/cv" />*/}
+      {appsData.map((app) => {
+        return <AppIcon icon={app.icon} label={app.label} link={app.link} />;
+      })}
     </div>
   );
 };

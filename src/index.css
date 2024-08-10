@@ -18,14 +18,14 @@ body {
 .home {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: start;
     padding: 20px;
     margin-top: 60px;
 }
 
 /* src/components/AppIcon.css */
 .app-icon {
-    width: 80px;
+    width: 25%;
     height: 100px;
     display: flex;
     flex-direction: column;
