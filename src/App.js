@@ -13,6 +13,7 @@ const App = () => {
     <Router>
       <div class="phone">
         <div class="screen">
+          <div class="time">15:18</div>
           <div class="notch">
             <div class="camera"></div>
           </div>
