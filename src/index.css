@@ -23,32 +23,6 @@ body {
     margin-top: 60px;
 }
 
-/* src/components/AppIcon.css */
-.app-icon {
-    width: 25%;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
-
-.app-icon .icon {
-    width: 60px;
-    height: 60px;
-    background: #fff;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.app-icon .label {
-    margin-top: 5px;
-    font-size: 12px;
-    color: #333;
-}
-
 /* Phone screen CSS */
 .phone {
     width: calc(95%);
@@ -126,4 +100,29 @@ body {
     width: 20px; /* Adjust the size of the icons */
     height: 20px;
     margin-left: 10px; /* Space between the icons */
+}
+
+/* src/components/AppIcon.css */
+.app-icon {
+    width: 25%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.app-icon .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.app-icon .label {
+    margin-top: 5px;
+    font-size: 12px;
 }
