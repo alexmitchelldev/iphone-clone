@@ -113,3 +113,17 @@ body {
     overflow: hidden;
     position: absolute;
 }
+
+.status-bar {
+    position: absolute;
+    top: 12px; /* Adjusts the vertical position */
+    right: 30px; /* Adjusts the horizontal position */
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px;
+    margin-left: 10px; /* Space between the icons */
+}

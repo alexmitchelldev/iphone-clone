@@ -17,6 +17,18 @@ const App = () => {
           <div class="notch">
             <div class="camera"></div>
           </div>
+          <div class="status-bar">
+            <img
+              src="/images/apps/wifi.png"
+              alt="WiFi Icon"
+              class="icon wifi-icon"
+            ></img>
+            <img
+              src="/images/apps/battery.png"
+              alt="Battery Icon"
+              class="icon battery-icon"
+            ></img>
+          </div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
