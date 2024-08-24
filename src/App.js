@@ -21,14 +21,19 @@ const App = () => {
           </div>
           <div class="status-bar">
             <img
+              src="/images/apps/signal.png"
+              alt="cellular signal icon"
+              class="icon"
+            ></img>
+            <img
               src="/images/apps/wifi.png"
               alt="WiFi Icon"
-              class="icon wifi-icon"
+              class="wifi signal icon"
             ></img>
             <img
               src="/images/apps/battery.png"
               alt="Battery Icon"
-              class="icon battery-icon"
+              class="battery icon"
             ></img>
           </div>
           <Routes>
