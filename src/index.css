@@ -99,7 +99,6 @@ body {
 .icon {
     width: 20px; /* Adjust the size of the icons */
     height: 20px;
-    margin-left: 10px; /* Space between the icons */
 }
 
 /* src/components/AppIcon.css */
