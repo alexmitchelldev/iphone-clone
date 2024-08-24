@@ -14,7 +14,7 @@ const appsData = [
   },
   {
     id: 2,
-    label: "Music",
+    label: "What I'm listening to",
     icon: "/images/apps/music.png",
     link: null,
     type: appTypes.widget,
