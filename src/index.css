@@ -44,6 +44,13 @@ body {
     left: calc(30px);
 }
 
+.wifi {
+    display: block;
+    width: 50px;
+    height: 22px;
+    top: 12px;
+}
+
 .notch {
     content: "";
     display: block;
