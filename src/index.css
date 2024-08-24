@@ -124,49 +124,6 @@ body {
     height: 20px;
 }
 
-.app-icon {
-    width: 25%;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
-
-.app-icon .icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.app-label {
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-.widget-icon {
-    width: 50%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
-
-.widget-icon .icon {
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
