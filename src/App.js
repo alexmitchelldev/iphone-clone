@@ -8,12 +8,14 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
+import TimeDisplay from "./components/TimeDisplay";
+
 const App = () => {
   return (
     <Router>
       <div class="phone">
         <div class="screen">
-          <div class="time">15:18</div>
+          <TimeDisplay />
           <div class="notch">
             <div class="camera"></div>
           </div>
