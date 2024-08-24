@@ -34,11 +34,21 @@ body {
     margin: 0 auto;
 }
 
+/* Media query for tablets and larger screens */
+@media (min-width: 450px) {
+    .phone {
+        max-width: 430px;
+        height: 850px;
+        margin-top: 10vh;
+    }
+}
+
 .time {
     display: block;
     width: 50px;
     height: 22px;
-    color: #000;
+    color: black;
+    font-weight: semibold;
     position: absolute;
     top: 12px;
     left: calc(30px);
