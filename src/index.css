@@ -9,7 +9,6 @@ body {
 .app {
     display: flex;
     flex-direction: column;
-    /* height: 100vh; */
     background-size: cover;
 }
 
@@ -172,7 +171,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
     grid-auto-rows: 1fr; /* Auto rows with equal height */
-    gap: 10px; /* Spacing between items */
+    gap: 15px; /* Spacing between items */
     padding: 10px;
     width: 100%;
     margin-top: 50px;
@@ -184,8 +183,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -209,4 +207,5 @@ span {
     margin-top: 5px;
     text-align: center;
     font-size: 14px;
+    color: white;
 }
