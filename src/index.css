@@ -125,7 +125,26 @@ body {
     overflow: hidden;
 }
 
-.app-icon .label {
+.app-label {
     margin-top: 5px;
     font-size: 12px;
+}
+
+.widget-icon {
+    width: 50%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.widget-icon .icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
