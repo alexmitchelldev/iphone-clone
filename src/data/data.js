@@ -46,7 +46,7 @@ const appsData = [
   },
   {
     id: 6,
-    label: "Messages",
+    label: "Contact",
     icon: "/images/apps/messages.png",
     link: "/messages",
     type: appTypes.app,
