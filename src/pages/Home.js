@@ -1,6 +1,6 @@
 // src/pages/Home.js
 import React from "react";
-import AppIcon from "../components/AppIcon";
+import icons from "../components/App";
 import "../index.css";
 import appsData from "../data/data";
 
