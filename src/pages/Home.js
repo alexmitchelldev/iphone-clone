@@ -5,35 +5,17 @@ import "../index.css";
 import data from "../data/data";
 
 const Home = () => {
-  const rows = [];
-  let currentRow = [];
-  let currentWidth = 0;
-
-  data.appsData.forEach((app) => {
-    if (currentWidth + app.type > 4) {
-      rows.push(currentRow);
-      currentRow = [];
-      currentWidth = 0;
-    }
-
-    currentRow.push(app);
-    currentWidth += app.type;
-
-    if (currentRow.length > 0) {
-      rows.push(currentRow);
-    }
-  });
-
   return (
-    <div className="home">
+    <div className="grid-container">
       {data.appsData.map((app) => {
         return (
-          <icons.app
-            icon={app.icon}
-            label={app.label}
-            link={app.link}
-            type={app.type}
-          />
+          <div
+            key={app.id}
+            className={`grid-item ${app.type === data.appTypes.widget ? "widget" : "app"}`}
+          >
+            <img src={app.icon} alt={app.label} />
+            <span>{app.label}</span>
+          </div>
         );
       })}
     </div>
