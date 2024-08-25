@@ -12,9 +12,12 @@ const Home = () => {
           <div
             key={app.id}
             className={`grid-item ${app.type === data.appTypes.widget ? "widget" : "app"}`}
-            style={{ "background-color": app.background }}
           >
-            <img src={app.icon} alt={app.label} />
+            <img
+              style={{ "background-color": app.background }}
+              src={app.icon}
+              alt={app.label}
+            />
             <span>{app.label}</span>
           </div>
         );
