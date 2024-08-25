@@ -6,17 +6,17 @@ const appTypes = {
 const statusIconsData = [
   {
     id: 1,
-    label: "Cellular signal icon",
+    alt: "Cellular signal icon",
     icon: "/images/apps/signal.png",
   },
   {
     id: 2,
-    label: "Wifi icon",
+    alt: "Wifi signal icon",
     icon: "/images/apps/wifi.png",
   },
   {
     id: 3,
-    label: "Battery icon",
+    alt: "Battery percentage icon",
     icon: "/images/apps/battery.png",
   },
 ];

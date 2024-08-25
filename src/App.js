@@ -23,7 +23,7 @@ const App = () => {
           </div>
           <div class="status-bar">
             {data.statusIconsData.map((icon) => {
-              return <img src={icon.icon} alt={icon.label} class="icon"></img>;
+              return <img src={icon.icon} alt={icon.alt} class="icon"></img>;
             })}
           </div>
           <Routes>
