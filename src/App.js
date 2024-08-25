@@ -15,15 +15,17 @@ import TimeDisplay from "./components/TimeDisplay";
 const App = () => {
   return (
     <Router>
-      <div class="phone">
-        <div class="screen">
+      <div className="phone">
+        <div className="screen">
           <TimeDisplay />
-          <div class="notch">
-            <div class="camera"></div>
+          <div className="notch">
+            <div className="camera"></div>
           </div>
-          <div class="status-bar">
+          <div className="status-bar">
             {data.statusIconsData.map((icon) => {
-              return <img src={icon.icon} alt={icon.alt} class="icon"></img>;
+              return (
+                <img src={icon.icon} alt={icon.alt} className="icon"></img>
+              );
             })}
           </div>
           <Routes>
