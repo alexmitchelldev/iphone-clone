@@ -2,6 +2,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import data from "./data/data";
+
 import "./index.css";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
@@ -20,21 +22,9 @@ const App = () => {
             <div class="camera"></div>
           </div>
           <div class="status-bar">
-            <img
-              src="/images/apps/signal.png"
-              alt="cellular signal icon"
-              class="icon"
-            ></img>
-            <img
-              src="/images/apps/wifi.png"
-              alt="WiFi Icon"
-              class="wifi signal icon"
-            ></img>
-            <img
-              src="/images/apps/battery.png"
-              alt="Battery Icon"
-              class="battery icon"
-            ></img>
+            {data.statusIconsData.map((icon) => {
+              return <img src={icon.icon} alt={icon.label} class="icon"></img>;
+            })}
           </div>
           <Routes>
             <Route path="/" element={<Home />} />

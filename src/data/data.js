@@ -3,6 +3,24 @@ const appTypes = {
   widget: 2,
 };
 
+const statusIconsData = [
+  {
+    id: 1,
+    label: "Cellular signal icon",
+    icon: "/images/apps/signal.png",
+  },
+  {
+    id: 2,
+    label: "Wifi icon",
+    icon: "/images/apps/wifi.png",
+  },
+  {
+    id: 3,
+    label: "Battery icon",
+    icon: "/images/apps/battery.png",
+  },
+];
+
 const appsData = [
   {
     id: 1,
@@ -55,6 +73,7 @@ const appsData = [
 ];
 
 const data = {
+  statusIconsData: statusIconsData,
   appTypes: appTypes,
   appsData: appsData,
 };
