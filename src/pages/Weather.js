@@ -72,21 +72,15 @@ const Weather = () => {
       const response = await fetch(weatherQueryUrl);
       const responseJson = await response.json();
 
-      console.log(responseJson);
-
-      if (responseJson.hasOwnProperty("main")) {
-        if (responseJson.main.hasOwnProperty("temp")) {
-          const celsius = String(Number(responseJson.main.temp).toFixed(1));
-          setTemp(`${celsius}°C`);
-        }
+      if (`main` in responseJson && `temp` in responseJson.main) {
+        const celsius = String(Number(responseJson.main.temp).toFixed(1));
+        setTemp(`${celsius}°C`);
       }
 
-      if (responseJson.hasOwnProperty("sys")) {
-        if ("sunrise" in responseJson.sys) {
+      if (`sys` in responseJson) {
+        if ("sunrise" in responseJson.sys && "sunset" in responseJson.sys) {
           const sunrise = new Date(responseJson.sys.sunrise * 1000);
           setSunrise(buildTimeString(sunrise.getHours(), sunrise.getMinutes()));
-        }
-        if ("sunset" in responseJson.sys) {
           const sunset = new Date(responseJson.sys.sunset * 1000);
           setSunset(buildTimeString(sunset.getHours(), sunset.getMinutes()));
         }
