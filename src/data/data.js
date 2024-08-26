@@ -26,9 +26,10 @@ const appsData = [
     id: 1,
     label: "Weather",
     icon: "/images/apps/weather.svg",
-    link: null,
+    link: "/weather",
     type: appTypes.widget,
-    background: "linear-gradient(to top, #B3E5FC, #1565C0)",
+    // background: "linear-gradient(to top, #B3E5FC, #1565C0)",
+    background: "#1565C0",
   },
   {
     id: 2,

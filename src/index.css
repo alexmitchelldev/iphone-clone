@@ -42,8 +42,13 @@ body {
     .phone {
         max-width: 430px;
         height: 850px;
-        margin-top: 8vh;
+        margin-top: 5vh;
     }
+}
+
+.top-bar {
+    display: block;
+    width: 100%;
 }
 
 .time {
@@ -119,6 +124,10 @@ body {
     align-items: center;
 }
 
+.spacer {
+    margin-bottom: 40px;
+}
+
 .icon {
     width: 20px; /* Adjust the size of the icons */
     height: 20px;
@@ -132,7 +141,7 @@ body {
     gap: 15px; /* Spacing between items */
     padding: 20px;
     width: 100%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     box-sizing: border-box;
 }
 
@@ -169,4 +178,60 @@ span {
     text-align: center;
     font-size: 14px;
     color: white;
+}
+
+/* Apps */
+
+.weather-screen {
+    background: linear-gradient(to bottom, #81d4fa, #2196f3);
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    color: white;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    display: inherit;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.weather-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 300px;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.temperature h2 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.weather-icon img {
+    width: 80px;
+    height: auto;
+}
+
+.sunrise-sunset p {
+    margin: 5px 0;
+    font-size: 18px;
 }
