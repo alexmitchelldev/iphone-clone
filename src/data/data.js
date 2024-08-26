@@ -75,10 +75,9 @@ const appsData = [
 
 const weatherIcons = [
   {
+    // "https://www.iconfinder.com/icons/2682848/day_forecast_sun_sunny_weather_icon",
     id: 1,
     link: "/images/weather/sunny.png",
-    reference:
-      "https://www.iconfinder.com/icons/2682848/day_forecast_sun_sunny_weather_icon",
   },
 ];
 
