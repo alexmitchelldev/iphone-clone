@@ -1,24 +1,135 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.css";
-import data from "../data/data";
+
+const APP_ID = null;
+
+const buildLocationQueryUrl = (location) => {
+  const baseUrl = "http://api.openweathermap.org/geo/1.0/direct?";
+
+  const queryUrl = `${baseUrl}q=${location}&appid=${APP_ID}&limit=5`;
+
+  return queryUrl;
+};
+
+const buildWeatherQueryUrl = (lat, lon) => {
+  const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
+
+  const queryUrl = `${baseUrl}lat=${lat}&lon=${lon}&appid=${APP_ID}&units=metric`;
+
+  return queryUrl;
+};
+
+const buildTimeString = (hours, minutes) => {
+  hours = hours.toString().padStart(2, "0");
+  minutes = minutes.toString().padStart(2, "0");
+
+  return `${hours}:${minutes}`;
+};
 
 const Weather = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [temp, setTemp] = useState("");
+  const [sunrise, setSunrise] = useState("");
+  const [sunset, setSunset] = useState("");
+  const [data, setData] = useState([]);
+
+  const handleSearchChange = async (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    if (value.length > 2) {
+      const queryUrl = buildLocationQueryUrl(value);
+      const response = await fetch(queryUrl);
+      setData(await response.json());
+
+      const placeNames = data.map((location) => {
+        return `${location.name} - ${location.state ? `${location.state}, ` : ``}${location.country}`;
+      });
+
+      setSuggestions(placeNames);
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const getLocationWeather = async (location, index) => {
+    setSearchTerm(location);
+    setSuggestions([]);
+
+    const locationObject = data[index];
+
+    if (
+      locationObject &&
+      locationObject.hasOwnProperty("lat") &&
+      locationObject.hasOwnProperty("lon")
+    ) {
+      const lat = data[index]["lat"];
+      const lon = data[index]["lon"];
+
+      const weatherQueryUrl = buildWeatherQueryUrl(lat, lon);
+      const response = await fetch(weatherQueryUrl);
+      const responseJson = await response.json();
+
+      console.log(responseJson);
+
+      if (responseJson.hasOwnProperty("main")) {
+        if (responseJson.main.hasOwnProperty("temp")) {
+          const celsius = String(Number(responseJson.main.temp).toFixed(1));
+          setTemp(`${celsius}°C`);
+        }
+      }
+
+      if (responseJson.hasOwnProperty("sys")) {
+        if ("sunrise" in responseJson.sys) {
+          const sunrise = new Date(responseJson.sys.sunrise * 1000);
+          setSunrise(buildTimeString(sunrise.getHours(), sunrise.getMinutes()));
+        }
+        if ("sunset" in responseJson.sys) {
+          const sunset = new Date(responseJson.sys.sunset * 1000);
+          setSunset(buildTimeString(sunset.getHours(), sunset.getMinutes()));
+        }
+      }
+    }
+  };
+
   return (
     <div className="weather-screen">
       <div className="spacer"></div>
       <div className="search-bar">
-        <input type="text" placeholder="Search location..." />
+        <input
+          type="text"
+          placeholder="Search location..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+        {suggestions.length > 0 && (
+          <ul className="suggestions-dropdown">
+            {suggestions.map((location, index) => {
+              return (
+                <li
+                  key={index}
+                  onClick={() => getLocationWeather(location, index)}
+                >
+                  {location}
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
       <div className="weather-display">
         <div className="weather-box temperature">
-          <h2>25°C</h2>
+          <h2>{temp}</h2>
         </div>
         <div className="weather-box weather-icon">
-          <img src="/images/weather/sunny.png" alt="weather type icon"></img>
+          {
+            // <img src="/images/weather/sunny.png" alt="weather type icon"></img>
+          }
         </div>
         <div className="weather-box sunrise-sunset">
-          <p>Sunrise: 6:00 AM</p>
-          <p>Sunset: 8:00 PM</p>
+          <p>Sunrise: {sunrise}</p>
+          <p>Sunset: {sunset}</p>
         </div>
         <div className="weather-box tbc"></div>
       </div>

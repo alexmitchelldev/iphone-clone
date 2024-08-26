@@ -209,6 +209,31 @@ span {
     font-size: 16px;
 }
 
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    position: absolute;
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;
+    margin-top: 40px;
+}
+
+.suggestions-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.suggestions-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
 .weather-display {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
