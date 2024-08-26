@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import "../index.css";
 
 const APP_ID = null;
+const BASE_URL = "http://api.openweathermap.org";
 
 const buildLocationQueryUrl = (location) => {
-  const baseUrl = "http://api.openweathermap.org/geo/1.0/direct?";
+  const url = `${BASE_URL}/geo/1.0/direct?`;
 
-  const queryUrl = `${baseUrl}q=${location}&appid=${APP_ID}&limit=5`;
+  const queryUrl = `${url}q=${location}&appid=${APP_ID}&limit=5`;
 
   return queryUrl;
 };
 
 const buildWeatherQueryUrl = (lat, lon) => {
-  const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
+  const url = `${BASE_URL}/data/2.5/weather?`;
 
-  const queryUrl = `${baseUrl}lat=${lat}&lon=${lon}&appid=${APP_ID}&units=metric`;
+  const queryUrl = `${url}lat=${lat}&lon=${lon}&appid=${APP_ID}&units=metric`;
 
   return queryUrl;
 };
